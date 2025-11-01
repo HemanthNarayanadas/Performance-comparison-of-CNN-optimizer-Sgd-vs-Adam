@@ -54,107 +54,123 @@ It follows a clear experimental pipeline — from data preparation to visualizat
 ```bash
 python cnn_optimizer_comparison.py
 
-## 📊 Key Findings
+📊 Key Findings
+Optimizer	Validation Accuracy	Training Time (s)	Convergence
+SGD	Moderate (slower)	Higher	Gradual
+Adam	Higher	Faster	Stable
+Summary
 
-| **Optimizer** | **Validation Accuracy** | **Training Time (s)** | **Convergence** |
-|----------------|--------------------------|------------------------|-----------------|
-| SGD            | Moderate (slower)        | Higher                 | Gradual         |
-| Adam           | Higher                   | Faster                 | Stable          |
+Adam achieves faster convergence and higher accuracy.
 
-### Summary
-- **Adam** achieves faster convergence and higher accuracy.  
-- **SGD** performs well with tuned hyperparameters but converges slower.  
-- **Adam** is preferred for general and research use; **SGD** suits production stability.  
+SGD performs well with tuned hyperparameters but converges slower.
 
----
+Adam is preferred for general and research use; SGD suits production stability.
 
-## 🧠 Methodology
+🧠 Methodology
+Dataset Loading & Preprocessing
 
-### Dataset Loading & Preprocessing
-- Automatically extracts ZIP files and detects class folders.  
-- Applies normalization and augmentation (rotation, flips, zooms).  
+Automatically extracts ZIP files and detects class folders.
 
-### Model Architecture
-- Convolutional layers → BatchNorm → ReLU  
-- MaxPooling + Dropout for regularization  
-- Dense + Softmax for classification  
+Applies normalization and augmentation (rotation, flips, zooms).
 
-### Training Setup
-- Same CNN trained twice (once with SGD, once with Adam)  
-- **Epochs:** 5  
-- **Batch Size:** 32  
-- **Validation Split:** 0.2  
+Model Architecture
 
-### Evaluation
-- Compares both optimizers using identical configurations.  
-- Saves accuracy/loss graphs and CSV summary.  
+Convolutional layers → BatchNorm → ReLU
 
----
+MaxPooling + Dropout for regularization
 
-## 🖼️ Visualization Outputs
+Dense + Softmax for classification
+
+Training Setup
+
+Same CNN trained twice (once with SGD, once with Adam)
+
+Epochs: 5
+
+Batch Size: 32
+
+Validation Split: 0.2
+
+Evaluation
+
+Compares both optimizers using identical configurations.
+
+Saves accuracy/loss graphs and CSV summary.
+
+🖼️ Visualization Outputs
 
 The notebook generates:
-- **Accuracy Curve:** SGD vs Adam validation accuracy  
-- **Loss Curve:** SGD vs Adam validation loss  
-- **Performance Bar Chart:** Accuracy & training time  
-- **Result CSV:** Consolidated metrics summary  
 
-All generated files are saved inside the **`results/`** directory.  
+Accuracy Curve: SGD vs Adam validation accuracy
 
----
+Loss Curve: SGD vs Adam validation loss
 
-## 🧰 Technical Details
+Performance Bar Chart: Accuracy & training time
 
-### Optimizers
-- **SGD:** learning_rate = 0.01, momentum = 0.9  
-- **Adam:** learning_rate = 0.001  
+Result CSV: Consolidated metrics summary
 
-### Dataset
-- Custom uploaded dataset **or** CIFAR-10 fallback.  
-- Automatically split into training and validation sets.  
+All generated files are saved inside the results/ directory.
 
-### Model Summary
-- **Input shape:** 64×64×3 (adjustable)  
-- **Layers:** 3× Conv2D blocks + Pooling + Dropout  
-- **Output:** Dense layers for classification  
+🧰 Technical Details
+Optimizers
 
----
+SGD: learning_rate = 0.01, momentum = 0.9
 
-## 🎓 Educational Value
+Adam: learning_rate = 0.001
+
+Dataset
+
+Custom uploaded dataset or CIFAR-10 fallback.
+
+Automatically split into training and validation sets.
+
+Model Summary
+
+Input shape: 64×64×3 (adjustable)
+
+Layers: 3× Conv2D blocks + Pooling + Dropout
+
+Output: Dense layers for classification
+
+🎓 Educational Value
 
 This project is ideal for:
-- Understanding **optimizer behavior** in CNNs.  
-- Learning **experimental comparison** methods.  
-- Practicing **Colab-based deep learning workflows**.  
-- Visualizing **optimizer convergence and stability**.  
 
----
+Understanding optimizer behavior in CNNs.
 
-## 🔮 Future Enhancements
+Learning experimental comparison methods.
 
-- Compare more optimizers (RMSProp, AdamW, AdaGrad).  
-- Add learning rate schedulers.  
-- Integrate transfer learning models (ResNet, VGG).  
-- Evaluate larger datasets like ImageNet or custom datasets.  
+Practicing Colab-based deep learning workflows.
 
----
+Visualizing optimizer convergence and stability.
 
-## 🧾 Dependencies
+🔮 Future Enhancements
 
-- TensorFlow / Keras  
-- NumPy  
-- Pandas  
-- Matplotlib  
-- Seaborn  
-- Scikit-learn  
+Compare more optimizers (RMSProp, AdamW, AdaGrad).
 
-> 🧩 All dependencies install automatically when using **Google Colab**.
+Add learning rate schedulers.
 
----
+Integrate transfer learning models (ResNet, VGG).
 
-## 🪪 License
+Evaluate larger datasets like ImageNet or custom datasets.
 
-This project is open-source and available under the **MIT License** —  
+🧾 Dependencies
+
+TensorFlow / Keras
+
+NumPy
+
+Pandas
+
+Matplotlib
+
+Seaborn
+
+Scikit-learn
+
+🧩 All dependencies install automatically when using Google Colab.
+
+🪪 License
+
+This project is open-source and available under the MIT License —
 free to use, modify, and distribute with proper credit.
-
-
