@@ -54,7 +54,6 @@ It follows a clear experimental pipeline — from data preparation to visualizat
 ### Or locally (Python script version):
 ```bash
 python cnn_optimizer_comparison.py
-
 ## 📊 Key Findings
 
 | **Optimizer** | **Validation Accuracy** | **Training Time (s)** | **Convergence** |
@@ -157,4 +156,5 @@ This project is ideal for:
 
 This project is open-source and available under the **MIT License** —  
 free to use, modify, and distribute with proper credit.
+
 
